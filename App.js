@@ -8,32 +8,35 @@ import {
 import { 
 		NavigationActions,
 		StackNavigator, 
-		TabNavigator
+    TabNavigator,
 } from 'react-navigation';
 
-import Events from './Components/Events';
-import Births from './Components/Births';
-import Deaths from './Components/Deaths';
+import Events from './src/Components/Events';
+import Births from './src/Components/Births';
+import Deaths from './src/Components/Deaths';
 
 const RootTab = TabNavigator({
 	TabOne: {
 			screen: Events,
 			navigationOptions: {
-					title: 'Events'
-			}
+          title: 'Events',
+      }
 	},
 	TabTwo: {
-			screen: Search,
+			screen: Births,
 			navigationOptions: {
 					title: 'Births'
 			}
   },
   TabThree: {
-			screen: Search,
+			screen: Deaths,
 			navigationOptions: {
 					title: 'Deaths'
 			}
-	}
+  }
+},
+{
+  tabBarPosition: 'bottom'
 });
 
 //The base component for the tab menu
